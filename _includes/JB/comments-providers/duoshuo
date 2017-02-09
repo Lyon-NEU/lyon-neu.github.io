@@ -1,14 +1,37 @@
 <!-- Duoshuo Comment BEGIN -->
+
+<style type="text/css">
+#ds-reset .ds-avatar img {
+  width: 54px !important;
+  height: 54px !important;
+  -webkit-border-radius: 27px !important;
+  -moz-border-radius: 27px !important;
+  border-radius: 27px !important;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+#ds-reset .ds-avatar img:hover {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+
+#ds-reset .ds-powered-by{
+	display: none;
+}
+</style>
+
   <div class="ds-thread"{% if page.wordpress_id %} data-thread-key="{{page.wordpress_id}}"{% endif %}></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:'{{ site.JB.comments.duoshuo.short_name }}'};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
+var duoshuoQuery = {short_name:"camelslab"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
   </script>
 <!-- Duoshuo Comment END -->
