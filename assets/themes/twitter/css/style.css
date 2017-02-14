@@ -63,3 +63,18 @@
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+  
+  .nav_list{
+	line-height:30px;
+    width:60%;
+    float:left;
+    padding:5px;	
+ }
+ 
+ .resume{
+	width:35%;
+	#height:350px;
+    float:left;
+    padding:10px;
+	#background-color:#eeeeee;
+ }

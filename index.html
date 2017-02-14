@@ -18,8 +18,9 @@ tagline: zhaosen
   </li>
 {% endfor %}
 </ul> -->
-
-<ul class="posts">
+<div class="row">
+<div class="nav_list">
+  <ul class="posts">
   {% for post in paginator.posts %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> 
     <!-- <p>{{post.excerpt}}</p> -->
@@ -46,12 +47,28 @@ tagline: zhaosen
   {% endfor %}
 
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Ne xt &raquo;</a>
   {% else %}
     <span>Next &raquo;</span>
   {% endif %}
 </div>
 {% endif %}
+</div>
+<div class="resume">
+  <img src="{{ BASE_PATH }}/assets/pictures/me.jpg"  class="img-responsive img-rounded" />
+<address>
+  <strong>Twitter, Inc.</strong><br>
+  1355 Market Street, Suite 900<br>
+  San Francisco, CA 94103<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+<address>
+  <strong>Wang Zhaosen</strong><br>
+  <a href="mailto:#">wanlplab@gmail.com</a>
+</address>
+</div>
+  
+</div>
 <!-- {% for category in site.categories %}
 <h3>{{ category | first }}</h3> 
 <ul class="arc-list">
