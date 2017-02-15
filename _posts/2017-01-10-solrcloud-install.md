@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Install SorlCloud"
+title: "Install SolrCloud"
 description: "install solrcloud "
 category: solr
 tags: [solr]

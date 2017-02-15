@@ -34,7 +34,7 @@ kramdown:
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : http://lyon-neu.github.io
-
+url: http://www.camelslab.com
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :

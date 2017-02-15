@@ -17,7 +17,8 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="{{BASE_APTH}}/assets/themes/syntax.css" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/syntax.css" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ BASE_PATH }}/assets/js/jquery-ui.min.css" type="text/css" media="all">
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -29,7 +30,8 @@
     <!-- atom & rss feed -->
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-
+    <script type="text/javascript" src="{{BASE_PATH}}/assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="{{BASE_PATH}}/assets/js/jquery-ui.min.js"></script>
   </head>
 
   <body>
@@ -42,12 +44,11 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
-          <form class="navbar-form navbar-right" role="search">
+          <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-            
+              <input id="search" type="text" class="form-control" placeholder="Search">
+              <!-- <button type="submit" class="btn btn-default">Go!</button> -->
+            </div>        
           </form>
         </div>
       </div>
@@ -86,5 +87,33 @@ class="statcounter"
 src="//c.statcounter.com/11248754/0/66f28c72/0/" alt="web
 stats"></a></div></noscript> -->
 <!-- End of StatCounter Code for Default Guide -->
+<script>
+  $(function() {
+    $.ajax({
+            url: "search.xml",
+            dataType: "xml",
+            success: function( xmlResponse ) {
+                var data = $( "article", xmlResponse ).map(function() {
+                    return {
+                        value: $( "title", this ).text() + ", " +
+                            ( $.trim( $( "date", this ).text())),
+                        desc: $("description", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                // for(var a in data){
+                //   console.log(data[a])
+                // }
+                $( "#search" ).autocomplete({
+                    source: data,
+                    minLength: 0,
+                    select: function( event, ui ) {
+                        window.location.href = ui.item.url;
+                    }
+                });
+            }
+        });
+    });
+</script>
   </body>
 </html>
