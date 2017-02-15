@@ -90,7 +90,7 @@ stats"></a></div></noscript> -->
 <script>
   $(function() {
     $.ajax({
-            url: "search.xml",
+            url: "{{BASE_PATH}}/search.xml",
             dataType: "xml",
             success: function( xmlResponse ) {
                 var data = $( "article", xmlResponse ).map(function() {
