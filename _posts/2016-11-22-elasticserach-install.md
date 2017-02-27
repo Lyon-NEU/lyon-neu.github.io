@@ -37,4 +37,18 @@ tags: [es]
 ## Install Elasticsearch
  1. Download [*_elasticserach-5.0.1.tar.gz_*]()
  2. Extract file `tar -xvf elasticsearch-5.0.1.tar.gz`
- 3. Change user ownership `chown -R elsearch:elsearch elasticsearch-5.0.1`
+ 3. Change user ownership `chown -R elsearch:elsearch elasticsearch-5.0.1`  
+
+ ## Deploy
+
+ - <font color='red'>cluster.name</font>
+
+ `cluster.name: xh-es`
+
+ - <font color='red'>node.name</font>
+
+ `node.name: xh-es-node-1`
+
+ - <font color='red'>path.data</font>
+
+ `path.data: /data/`
