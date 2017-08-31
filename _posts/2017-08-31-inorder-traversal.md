@@ -67,35 +67,35 @@ class Solution{
      4   5 6  
 
 	stack:
-	
-	 |   |    |   |    | 4 |    |   |    |   |    |   |    |   |    |  |     |   |    |   |    |   |    |  |
- 	 |   |    | 2 |    | 2 |    | 2 |    |   |    | 5 |    |   |    |  |     |   |    | 6 |    |   |    |  |
-     |_1_|    |_1_|    |_1_|    |_1_|    |_1_|    |_1_|    |_1_|    |__|     |_3_|    |_3_|    |_3_|    |__|
-	 push 1   push 2   push 4   pop 4    pop 2    push 5   pop 5    pop 1    push 3   push 6   pop 6    pop 3
-	                            add 4    add 2             add 5    add 1                      add 6    add 3
+
+	 |   |  |   |   | 4 |  |   |  |   |  |   |  |   |  |  |  |   |  |   |  |   |  |  |
+ 	 |   |  | 2 |   | 2 |  | 2 |  |   |  | 5 |  |   |  |  |  |   |  | 6 |  |   |  |  |
+     |_1_|  |_1_|   |_1_|  |_1_|  |_1_|  |_1_|  |_1_|  |__|  |_3_|  |_3_|  |_3_|  |__|
+	 push 1 push 2  push 4 pop 4  pop 2  push5  pop 5  pop 1 push 3 push 6 pop 6  pop 3
+	                       add 4  add 2         add 5  add 1               add 6  add 3
 	
 	res<>:
- 	[]                          [4]     [4,2]            [4,2,5]  [4,2,5,1]                [4,2,5,1,6] [4,2,5,1,6,3]
+ 	[]                     [4]    [4,2]         [4,2,5] [4,2,5,1]         [4,2,5,1,6] [4,2,5,1,6,3]
 
 ```java
-	public class Solution{
-		public List<Integer> inorderTraversal(TreeNode root){
-			List<Integer>res=new ArrayList<Integer>();
-			Stack<TreeNode>stack=new Stack<TreeNode>();
-			TreeNode cur=root;
-			while(cur!=null || !stack.empty()){
-				while(cur!=null){
-					stack.push(cur);
-					cur=curl.left;
-				}
-				cur=statck.pop();
-				res.add(cur.value());
-				cur=cur.right;
+public class Solution{
+	public List<Integer> inorderTraversal(TreeNode root){
+		List<Integer>res=new ArrayList<Integer>();
+		Stack<TreeNode>stack=new Stack<TreeNode>();
+		TreeNode cur=root;
+		while(cur!=null || !stack.empty()){
+			while(cur!=null){
+				stack.push(cur);
+				cur=curl.left;
 			}
-			return res;
+			cur=statck.pop();
+			res.add(cur.value());
+			cur=cur.right;
 		}
-
+		return res;
 	}
+
+}
 
 ```
 - Complexity Analysis
@@ -152,7 +152,8 @@ class Solution{
 	                3
 	               /
 	              6
-	then add 4 because it has no left child, then add 2, 5, 1, 3 one by one, for node 3 which has left child 6, do the same as above. Finally, the inorder taversal is [4,2,5,1,6,3].
+	then add 4 because it has no left child, then add 2, 5, 1, 3 one by one,   
+	for node 3 which has left child 6, do the same as above. Finally, the inorder taversal is [4,2,5,1,6,3].
 
 ```java
 
