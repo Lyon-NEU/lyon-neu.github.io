@@ -146,10 +146,15 @@ kafka的配置也很简单，主要设置*zookeeper* 的地址 ![Kafka配置](ht
 3. 启动Logstash
 
     #测试配置
+
     bin/logstash -f first-pipline.conf --config.test_and_exit
+
     #如可配置成功，启动 ,后台运行可用*nohup*命令，或者其它方式
+
     bin/logstash -f first-pipline.confg 
+
     #启用自动更新配置文件
+    
     bin/logstash -f first-pipline.confg  --config.reload.automatic
 
 ### Elasticsearch
