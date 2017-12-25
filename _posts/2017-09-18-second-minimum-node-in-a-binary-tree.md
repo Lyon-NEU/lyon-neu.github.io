@@ -3,7 +3,7 @@ layout: post
 title: "Second Minimum Node In a Binary Tree"
 description: "求第二小元素"
 category: algo 
-tags: [algo,java]
+tags: 
 ---
 {% include JB/setup %}
 
