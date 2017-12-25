@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Numpy笔记"
+title: "Numpy Array"
 descrption : "Numpy学习笔记"
 category:
 tags : [Python,Numpy,Array]
