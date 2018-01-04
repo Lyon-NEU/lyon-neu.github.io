@@ -3,7 +3,8 @@ rvm:
 - 2.2.5
 
 before_intall:
-  - sudo chmod a+x ./script/cibuild
+  - su
+  - chmod a+x ./script/cibuild
 # 假如 bundler 被使用，安装时将运行 `bundle install`.
 script: ./script/cibuild
 
