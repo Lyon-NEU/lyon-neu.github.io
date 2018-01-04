@@ -2,8 +2,8 @@ language: ruby
 rvm:
 - 2.2.5
 
-before_script:
-  - chmod a+x script/cibuild
+before_intall:
+  - chmod a+x ./script/cibuild
 # 假如 bundler 被使用，安装时将运行 `bundle install`.
 script: ./script/cibuild
 
