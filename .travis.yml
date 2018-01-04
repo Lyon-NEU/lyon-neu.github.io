@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.1
+- 2.2.5
 # 假如 bundler 被使用，安装时将运行 `bundle install`.
 script: ./script/cibuild
 
